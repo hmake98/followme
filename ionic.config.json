@@ -1,0 +1,8 @@
+{
+  "name": "followme",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "a6f59777"
+}
