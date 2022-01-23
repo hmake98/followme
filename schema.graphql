@@ -1,0 +1,72 @@
+query me {
+  me {
+    id
+    email
+    username
+    dateOfBirth
+    deviceId
+    createdAt
+    gender
+    name
+    role
+    updatedAt
+    settings {
+      id
+      enableNotification
+      postPrivacy
+      profilePrivacy
+      updatedAt
+      createdAt
+    }
+  }
+}
+
+query post($where: PostWhereUniqueInput!) {
+  post(where: $where) {
+    id
+    content
+    createdAt
+    image
+    published
+    updatedAt
+    image
+    author {
+      id
+      username
+      name
+      email
+    }
+    likes {
+      id
+      createdAt
+      updatedAt
+      likedBy {
+        id
+        name
+        username
+      }
+    }
+    comments {
+      id
+      content
+      createdAt
+      updatedAt
+      mentionedUsers
+      commentedBy {
+        id
+        username
+        name
+      }
+    }
+    share {
+      id
+      createdAt
+      updatedAt
+      shareTo {
+        id
+        username
+        name
+      }
+    }
+  }
+}

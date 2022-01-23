@@ -1,6 +1,21 @@
 {
-  "appId": "io.ionic.followme",
+  "appId": "io.followme.mobile",
   "appName": "followme",
   "webDir": "www",
-  "bundledWebRuntime": false
+  "bundledWebRuntime": false,
+  "cordova": {
+    "preferences": {
+      "ScrollEnabled": "false",
+      "android-minSdkVersion": "19",
+      "BackupWebStorage": "none",
+      "AndroidLaunchMode": "singleTask",
+      "KeyboardResizeMode": "body",
+      "URL_SCHEME": "io.followme.mobile"
+    }
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": false
+    }
+  }
 }
