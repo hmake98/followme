@@ -24,6 +24,26 @@ const routes: Routes = [
         loadChildren: () => import('../pages').then(m => m.ProfilePageModule)
       },
       {
+        path: 'chats',
+        loadChildren: () => import('../pages').then(m => m.ChatsPageModule)
+      },
+      {
+        path: 'settings',
+        loadChildren: () => import('../pages').then(m => m.SettingsPageModule)
+      },
+      {
+        path: 'account',
+        loadChildren: () => import('../pages').then( m => m.AccountPageModule)
+      },
+      {
+        path: 'privacy',
+        loadChildren: () => import('../pages').then( m => m.PrivacyPageModule)
+      },
+      {
+        path: 'report',
+        loadChildren: () => import('../pages').then( m => m.ReportPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'

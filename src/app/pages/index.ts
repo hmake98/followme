@@ -4,3 +4,8 @@ export * from './activity/activity.module';
 export * from './profile/profile.module';
 export * from './login/login.module';
 export * from './signup/signup.module';
+export * from './chats/chats.module';
+export * from './settings/settings.module';
+export * from './account/account.module';
+export * from './report/report.module';
+export * from './privacy/privacy.module';

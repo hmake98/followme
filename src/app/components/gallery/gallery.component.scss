@@ -1,0 +1,16 @@
+@media (max-width: 800px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-auto-rows: 120px;
+    column-gap: 5px;
+    row-gap: 5px;
+    margin: 15px 10px;
+
+    .grid-image {
+      width: 300px;
+      height: 120px;
+      object-fit: cover;
+    }
+  }
+}

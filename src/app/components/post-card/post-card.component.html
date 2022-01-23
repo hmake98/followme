@@ -1,0 +1,49 @@
+<ion-card class="post">
+  <div class="post-header">
+    <div class="post-user">
+      <ion-avatar>
+        <img class="post-user-avatar" src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg">
+      </ion-avatar>
+      <div class="post-user-info">
+        <span class="post-user-name"> username </span>
+        <span class="post-user-location"> location </span>
+      </div>
+    </div>
+    <ion-icon class="post-options" [id]="'trigger-button'+post" name="ellipsis-vertical-outline"></ion-icon>
+    <ion-popover [trigger]="'trigger-button'+post">
+      <ng-template>
+        <ion-content>
+          <ion-list>
+            <ion-item [button]="true" [detail]="false">
+              <ion-label>edit</ion-label>
+            </ion-item>
+            <ion-item [button]="true" [detail]="false">
+              <ion-label>delete</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-content>
+      </ng-template>
+    </ion-popover>
+  </div>
+  <img class="post-image"
+    src="https://images.unsplash.com/photo-1642816169320-3c70968f53bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80" />
+  <div class="activity-icons">
+    <ion-icon name="heart-outline"></ion-icon>
+    <ion-icon name="chatbubbles-outline"></ion-icon>
+    <ion-icon name="share-social-outline"></ion-icon>
+  </div>
+  <div class="likes-by">
+    <img class="like-user-avatar overlap" src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg">
+    <img class="like-user-avatar overlap" src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg">
+    <img class="like-user-avatar overlap" src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg">
+    <div class="like-count"> <b> 300 </b> likes </div>
+  </div>
+  <ion-card-content class="post-content">
+    <b>username</b>
+    Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the
+    Wisconsin Territory in 1836.
+    Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the
+    Wisconsin Territory in 1836.
+  </ion-card-content>
+  <ion-card-subtitle class="post-comments"> view all comments </ion-card-subtitle>
+</ion-card>
