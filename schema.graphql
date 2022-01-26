@@ -70,3 +70,151 @@ query post($where: PostWhereUniqueInput!) {
     }
   }
 }
+
+query friends(
+  $orderBy: [FriendsOrderByWithRelationInput!]
+  $skip: Int
+  $take: Int
+) {
+  friends(orderBy: $orderBy, skip: $skip, take: $take) {
+    id
+    status
+    createdAt
+    updatedAt
+    fromUser {
+      id
+      username
+      email
+      name
+      gender
+      createdAt
+      updatedAt
+    }
+    toUser {
+      id
+      username
+      email
+      name
+      gender
+      createdAt
+      updatedAt
+    }
+  }
+}
+
+query comments(
+  $orderBy: [CommentsOrderByWithRelationInput!]
+  $skip: Int
+  $take: Int
+) {
+  comments(orderBy: $orderBy, skip: $skip, take: $take) {
+    id
+    post {
+      id
+    }
+    content
+    commentedBy {
+      id
+      name
+      username
+      email
+      gender
+      createdAt
+      updatedAt
+    }
+    likes {
+      id
+      likedBy {
+        id
+        name
+        username
+        email
+        gender
+      }
+    }
+    mentionedUsers
+    createdAt
+    updatedAt
+  }
+}
+
+query likes(
+  $orderBy: [LikesOrderByWithRelationInput!]
+  $skip: Int
+  $take: Int
+) {
+  likes(orderBy: $orderBy, skip: $skip, take: $take) {
+    id
+    updatedAt
+    createdAt
+    likedBy {
+      id
+      name
+      username
+      email
+      gender
+    }
+    post {
+      id
+    }
+  }
+}
+
+query share($where: ShareWhereUniqueInput!) {
+  share(where: $where) {
+    id
+    createdAt
+    updatedAt
+    post {
+      id
+    }
+    shareTo {
+      id
+      email
+      username
+      name
+      gender
+    }
+  }
+}
+
+query shares(
+  $orderBy: [ShareOrderByWithRelationInput!]
+  $skip: Int
+  $take: Int
+) {
+  shares(orderBy: $orderBy, skip: $skip, take: $take) {
+    id
+    createdAt
+    updatedAt
+    post {
+      id
+    }
+    shareTo {
+      id
+      email
+      name
+      username
+      gender
+    }
+  }
+}
+
+query settings($orderBy: [SettingsOrderByWithRelationInput!], $skip: Int, $take: Int) {
+  settings(orderBy: $orderBy, skip: $skip, take: $take) {
+    id
+    createdAt
+    updatedAt
+    user {
+      id
+      name
+      email
+      username
+      gender
+    }
+    enableNotification
+    postPrivacy
+    profilePrivacy
+  }
+}
+
